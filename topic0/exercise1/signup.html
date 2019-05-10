@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "login-box">
+        <form>
+            <h1>Sign Up</h1>
+            <p>
+            <input type="text" name="firstname" placeholder="Firstname*" required >
+            </p>
+            <p>
+            <input type="text" name="lastname" placeholder="Lastname*" required>
+            </p>
+            <p>
+            <input type="email" name="email" placeholder="Email id*" required>
+            </p>
+            <p>
+            <input type="text" name="sport" list="l1" placeholder="Sport Required*" required pattern="football|voley|rugby">
+            <datalist id="l1">
+                <option value="football"></option>>
+                <option value="voley"></option>
+                <option value="rugby"></option>
+            </datalist>
+            </p>
+            <p>
+            <input type="text" name="birthday" placeholder="Birthday">
+            </p>
+            <p>
+            <textarea name="description"  cols="30" rows="10" placeholder="Talk about you"></textarea>
+            </p>
+            <p>
+            <input type="submit" name="signup-button" value = "Signup">
+            <input type="reset" name="clear-button" value = "Clear">
+            </p>
+        </form>
+    </div>
+</body>
+</html>
