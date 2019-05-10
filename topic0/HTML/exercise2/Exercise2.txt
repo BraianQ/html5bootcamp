@@ -1,0 +1,2 @@
+When i deleted the word DOCTYPE and meta viewport nothing happends, but i understand when we used doctype we were declaring a type to my html.
+And meta viewport can help me to programming in phones, to adjust the view in to the screen.
