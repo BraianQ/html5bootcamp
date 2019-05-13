@@ -1,0 +1,8 @@
+@media all and (min-width: 1001px) {
+    .box ul li a:after {
+      content: " (" attr(data-email) ")";
+      font-size: 11px;
+      font-style: italic;
+      color: #666;
+    }
+}
