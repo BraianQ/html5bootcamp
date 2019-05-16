@@ -25,21 +25,27 @@ function newalert(){
 }*/
 
 let nodoBoton = document.querySelector('#button');
-nodoBoton.addEventListener('click',newalert);
+nodoBoton.addEventListener('click',ajaxcalls);
 
 /*---------------------------------------------------------------------------------------------------*/
 
-let config = {url : 'http://api.icndb.com/jokes/random' , responseType : 'json' , method : 'GET'};
+let config1 = {url : 'http://api.icndb.com/jokes/random' , responseType : 'json' , method : 'GET'};
 
 function ajaxcalls(config){
     return new Promise(function(resolve,reject){
-        config
-        if (xhr.status == 200){
-            resolve(document.querySelector(".hidden").innerHTML = (xhr.response).value.joke);
-        }else{
-            reject(document.querySelector(".hidden").classList.add("error"));
+        const xhr = new XMLHttpRequest();
+        xhr.open(config1.method,config1.url);
+        xhr.responseType = config1.responseType;
+        xhr.send('');
+        xhr.onload = function (){
+            if (xhr.status == 200){
+                let box = xhr.response;
+                resolve(document.querySelector(".hidden").innerHTML = box.value.joke);
+            }else{
+                reject(document.querySelector(".hidden").classList.add("error"));
         }
-    }
+        }
+    })
 }
 }
 
