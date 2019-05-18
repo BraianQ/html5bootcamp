@@ -16,7 +16,6 @@ function getDataAPI(){
     let box;
     xhr.open('GET', url);
     xhr.responseType = 'json';
-    xhr.send('');
     xhr.onload = function (){
         if (this.status == 200){
             box = xhr.response;
@@ -26,6 +25,7 @@ function getDataAPI(){
 
         }
     }
+    xhr.send('');
 }
 
 let nodoBoton = document.querySelector('#button');
@@ -33,15 +33,15 @@ nodoBoton.addEventListener('click',getDataAPI);
 
 /*---------------------------------------------------------------------------------------------------*/
 
-let  searh = document.querySelector("#qsearch");
-searh.addEventListener('change',() => {
-    getDataAPIList(searh.val);
+let  search = document.querySelector("#qsearch");
+search.addEventListener('change',() => {
+    getDataAPIList(search.value);
 })
 
 function getDataAPIList(q) {
     let basicurl = 'https://api.github.com/search/repositories';
-    let parameter = '/' + encodeURIComponent(q);
-    let fullurl = basicurl + parameter;
+    let parameter = 'q=' + encodeURIComponent(q);
+    let fullurl = basicurl + '?' + parameter;
 
     console.log(fullurl);
 
@@ -49,15 +49,15 @@ function getDataAPIList(q) {
 
     ajaxCall(config2).then(function (response) {
         let data = response.items;
-        console.log(data);
         let list = document.getElementById('list');
-        for (const url of data){
+        console.log(data);
+        data.forEach(data => {
             let newli = document.createElement('li');
-            list.textContent = `${url.url}`
+            newli.innerHTML = data.url;
             list.appendChild(newli);
-        }
+        });
     }).catch(() => {
-      document.getElementById('list').innerHTML = 'error';
+        document.getElementById('list').innerHTML = 'error';
     })
 }
 
