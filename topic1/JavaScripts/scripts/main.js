@@ -7,6 +7,35 @@ let nodoBoton = document.querySelector('#button');
 nodoBoton.addEventListener('click',hide);
 */
 
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+let matrix = [
+    ["Raul" , 55 , "Cordoba"],
+    ["Silvia" , 45 , "Tucuman"],
+    ["Gisella" , 22 , "Tandil"]
+];
+
+function printMatrix(matrix){
+    let doomtable = document.querySelector('#table');
+    let newtable = document.createElement("table");
+    doomtable.appendChild(newtable);
+    for (let i=0 ; i < 3 ; i++){
+        let doomtr = document.createElement("tr");
+        doomtable.appendChild(doomtr);
+        for (let j=0 ;j < 3 ; j++){
+            let doomtd = document.createElement("td");
+            doomtable.appendChild(doomtd);
+            let tdtext = document.createTextNode(matrix[i][j]);
+            console.log(matrix[i][j])
+            doomtd.appendChild(tdtext);
+        }
+    }
+    newtable.classList.add('#table');
+}
+
+printMatrix(matrix);
+
+
 
 /*-----------------------------------------------------------------------------------------------------*/
 
