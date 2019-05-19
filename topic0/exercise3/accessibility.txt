@@ -1,3 +1,0 @@
-The accessibility, now i know is very important to make a web page because not all persons have the sames capacities.
-So we have to do a page so that all each person can understand.
-When i have to valide my page, i used ChromeVox and in all of the fields a voice said what i need to put in.
