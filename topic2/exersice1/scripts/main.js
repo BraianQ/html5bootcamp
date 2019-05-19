@@ -1,6 +1,32 @@
 function loadpage(){
-class Movie {
+
+class Actor{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class EventEmitter{
+    constructor(){
+    }
+
+    on(Eventname, callback){
+        console.log("ON ");
+    }
+
+    emit(Eventname){
+        console.log("EMIT");
+    }
+
+    off(Eventname, callback){
+        console.log("OFF");
+    }
+}
+
+class Movie extends EventEmitter{
     constructor(title, year, duration){
+        super();
         this.title = title;
         this.year = year;
         this.duration = duration;
@@ -19,29 +45,6 @@ class Movie {
     }
 }
 
-class Actor{
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-}
-
-class EventEmitter{
-    constructor(){
-    }
-
-    on(Eventname, callback){
-
-    }
-
-    emit(Eventname){
-
-    }
-
-    off(Eventname, callback){
-
-    }
-}
 
 function playEvent(){
     consolge.log("the movie is playing");
@@ -58,6 +61,11 @@ function resumeEvent(){
 let movie1 = new Movie("ADVENGERS: ENDGAME", 2019, 185);
 let movie2 = new Movie("ADVENGERS: INFINITY WAR", 2018, 160);
 let actor = new Actor("Robert Downey" , 54);
+let EventL = new EventEmitter();
+
+movie1.on();
+
+EventL.on('play', playEvent);
 
 movie1.play();
 movie1.pause();
