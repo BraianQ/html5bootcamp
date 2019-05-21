@@ -1,0 +1,21 @@
+@media all and (max-width: 1000px) {
+    .container{
+      width: 500px;
+      display: relative;
+      flex-direction: column;
+    }
+    .container .box {
+      position: relative;
+      width: 200px;
+      height: 200px;   
+      box-sizing: border-box;
+      display: inline-block;  
+      margin: 5px;
+    }
+
+    .mid .container .box .imgbox img{
+      width: 200px;
+      height: 200px;
+  }
+}
+

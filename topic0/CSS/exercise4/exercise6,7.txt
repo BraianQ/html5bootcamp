@@ -1,0 +1,4 @@
+6)We can use !important or we can make id in the body(in my case i call it main),
+and in css #main put all the global definition.
+7)I think using !important or changing in the id on the body, the background color. we can solve this 
+problem without changing the line in "oh-no-inline-styles"
