@@ -1,0 +1,5 @@
+
+the difference between svg and bitmap is when we use svg and we expand an image
+it does not distort as it happens in the case of bitmaps, so svg is better, 
+but when the image has irregular shapes like for example a landscape the same it's not good.
+That another bad point to svg is we cant manipulate with javascripts.
