@@ -4,10 +4,32 @@ function loadpage(){
     let counterkey = 0;
     let buttonadd = document.querySelector('#buttonadd');
     let buttonremove = document.querySelector('#buttonremove');
+    let dropZone = document.querySelector('#textarea');
+    dropZone.addEventListener('dragover', handleDragOver);
+    dropZone.addEventListener('drop', handleFileSelect);
     buttonadd.addEventListener("click",saveData);
     buttonremove.addEventListener("click" , deleteData);
     buttonadd.addEventListener("click",saveDataDB);
     buttonremove.addEventListener("click" , deleteDataDB );
+
+    function handleFileSelect(event) {
+        event.stopPropagation();
+        event.preventDefault();
+    
+        var files = event.dataTransfer.files;
+        var reader = new FileReader();  
+        reader.onload = function(event) {            
+             document.getElementById('textarea').value = event.target.result;
+        }        
+        reader.readAsText(files[0],"UTF-8");
+    }
+    
+    function handleDragOver(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'copy';
+    }
+
 
     let db;
     indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
