@@ -30,7 +30,7 @@ class Movie extends Component{
 
     handleClick(){
         let newmovie = [this.state.movie,this.state.name,this.state.puntuation];
-        console.log(newmovie);
+        this.state.movies.push(newmovie);
     }
 
     render(){
