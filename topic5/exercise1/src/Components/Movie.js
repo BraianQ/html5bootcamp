@@ -7,7 +7,7 @@ class Movie extends Component{
             movie:'',
             name:'',
             puntuation:'',
-            movies : []
+            movies: ['']
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleMovieChange = this.handleMovieChange.bind(this);
@@ -30,7 +30,8 @@ class Movie extends Component{
 
     handleClick(){
         let newmovie = [this.state.movie,this.state.name,this.state.puntuation];
-        this.state.movies.push(newmovie);
+        this.setState({movies: [...this.state.movies, newmovie]})
+        this.props.list.push(newmovie);
     }
 
     render(){
