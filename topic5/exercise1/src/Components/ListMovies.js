@@ -1,17 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Movieli from './Movieli';
 
-class ListMovies extends Component{
-
-    render(){
+function ListMovies(props){
         return(
             <div className="listM">
-                <ul>
-                    {this.props.list.map((movie) => 
-                        <li>{movie}</li>)}
-                </ul>
+                {props.fav.map((movie , id) =>   
+                <Movieli key={id} id={id} value={movie} />
+                )}
             </div>
         )
-    }
 }
 
 export default ListMovies;
