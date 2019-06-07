@@ -1,3 +1,26 @@
 .App {
-  
+}
+
+.Movie{
+    display: inline-block;
+    text-align: center;
+    float:center;
+}
+
+.List{
+    float: right;
+    margin-right: 20%;
+    margin-bottom: 200%;
+}
+
+.Button{
+    text-decoration: none;
+    margin-top: 5px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
 }

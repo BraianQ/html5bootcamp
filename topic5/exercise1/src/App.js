@@ -1,65 +1,44 @@
 import React , {Component} from 'react';
 import './App.css';
 import Movie from './Components/Movie'
-import FavMovie from './Components/FavMovie';
+import ListMovie from './Components/ListMovie'
 
 class App extends Component{
   constructor(props){
     super(props);
     this.state ={
-      movie:'',
-      name:'',
-      puntuation:'',
-      favmovie:[] ,
-      movies:[]
-    };
-  }
-
-  handleMovieChange = (event) => {
-    this.setState({movie: event.target.value});
-    console.log(event.target.value);
-
-  } 
-
-  handleNameChange = (event) => {
-    this.setState({name: event.target.value});
-    console.log(event.target.value);
-
-  }
-
-  handlePuntChange = (event) => {
-    this.setState({puntuation : event.target.value});
-    console.log(event.target.value);
-  } 
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    let newmovies = this.state.movies;
-    let createmov = [this.state.movie,this.state.name,this.state.puntuation];
-    newmovies.push(createmov);
-    this.setState({
-      movies : newmovies
-    })
-    if (this.state.puntuation >= 4){
-      newmovies = this.state.favmovie;
-      newmovies.push(createmov);
-      this.setState({favmovie: newmovies});
+        title : '',
+        year : '',
+        duration : '',
+        movies : []
     }
-  } 
+}
 
+handleChange = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+    this.setState({
+        [name] : value
+    })
+}
+
+handleSubmit = (event) =>{
+    event.preventDefault();
+    let movie = [this.state.title, this.state.year , this.state.duration];
+    let newmovies = this.state.movies;
+    newmovies.push(movie);
+    this.setState({movies : newmovies});
+}
 
   render(){
     return(
       <div className="App">
         <Movie 
-        handleMovieChange={this.handleMovieChange} 
-        handleSubmit={this.handleSubmit} 
-        handlePuntChange={this.handlePuntChange}
-        handleNameChange={this.handleNameChange}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
         />
-        <FavMovie
-        handleFavMovieChange={this.handleFavMovieChange}
-        favmovie={this.state.favmovie}
+        <ListMovie 
+        movies={this.state.movies}
         />
       </div>
     )

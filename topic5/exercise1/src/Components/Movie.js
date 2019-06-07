@@ -1,37 +1,31 @@
-import React  from 'react';
+import React , {Component} from 'react';
+import Input from './Input'
 
-function Movie(props){
-    return(
-            <div className="movieform">
-                <form onSubmit={props.handleSubmit}>
-                    <label>Movie name</label><br />
-                    <input 
-                    type="text" 
-                    className="movieinput" 
-                    placeholder="Movie name"
-                    onChange={props.handleMovieChange}
+class Movie extends Component{
+    render(){
+        return(
+            <div className="Movie">
+                <p>Create your MOVIE</p>
+                <form onSubmit={this.props.handleSubmit}>
+                    <Input 
+                    value="Title"
+                    name="title"
+                    handleChange={this.props.handleChange}
                     />
-                    <br />
-                    <label>Your name</label><br />
-                    <input 
-                    type="text" 
-                    className="movieinput" 
-                    placeholder="Your name" 
-                    onChange={props.handleNameChange}
+                    <Input 
+                    value="Year"
+                    name="year"
+                    handleChange={this.props.handleChange}
                     />
-                    <br />
-                    <label>Puntuation</label><br />
-                    <select className="movieinput" onChange={props.handlePuntChange}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select><br />
-                    <button>Save</button>
+                    <Input 
+                    value="Duration"
+                    name="duration"
+                    handleChange={this.props.handleChange}
+                    />
+                    <button className="Button">Create and Save</button>
                 </form>
             </div>
-        );
+        )
     }
-
+}
 export default Movie;
