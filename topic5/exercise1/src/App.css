@@ -1,10 +1,12 @@
 .App {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 
-.Movie{
-    display: inline-block;
-    text-align: center;
-    float:center;
+.FormMovie{
+    width: 50%;
+    float: left;
 }
 
 .List{
@@ -23,4 +25,27 @@
     background-color: #1883ba;
     border-radius: 6px;
     border: 1px solid #0016b0;
+}
+
+.LittleBTN{
+    text-decoration: none;
+    margin-top: 0px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 5px;
+    border: 1px solid #0016b0;
+}
+
+.movie{
+    content: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.movie-card{
+    margin: 0;
+    padding: 0;
 }

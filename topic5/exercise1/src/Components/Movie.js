@@ -1,31 +1,15 @@
 import React , {Component} from 'react';
-import Input from './Input'
 
 class Movie extends Component{
     render(){
         return(
-            <div className="Movie">
-                <p>Create your MOVIE</p>
-                <form onSubmit={this.props.handleSubmit}>
-                    <Input 
-                    value="Title"
-                    name="title"
-                    handleChange={this.props.handleChange}
-                    />
-                    <Input 
-                    value="Year"
-                    name="year"
-                    handleChange={this.props.handleChange}
-                    />
-                    <Input 
-                    value="Duration"
-                    name="duration"
-                    handleChange={this.props.handleChange}
-                    />
-                    <button className="Button">Create and Save</button>
-                </form>
+            <div className="movie-card">
+                <p className="movie">{this.props.value[0]}</p><button 
+                onClick={() => {this.props.handleDelete(this.props.id)} } 
+                className="LittleBTN">Delete</button>
             </div>
         )
     }
 }
+
 export default Movie;
